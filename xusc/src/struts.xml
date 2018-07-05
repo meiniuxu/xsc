@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+<constant name="struts.devMode" value="true"/>
+   <constant name="struts.custom.i18n.resources" value="global"/>
+  <package name="default" extends="struts-default">
+  <action name="CheckLogin" class="controller.checkLogin">
+       <result name="success">/user.jsp</result>
+       <result name="fail">/login_fail.jsp</result>
+     </action>
+  <action name="CheckReg" class="controller.checkReg">
+       <result name="success">/login.jsp</result>
+       <result name="ERROR">/login_fail.jsp</result>
+       <result name="input">/reg.jsp</result>
+     </action>
+     <action name="showbooklist" class="controller.bookAction">
+        <result>/admin_book_list.jsp</result>
+     </action>
+     <action name="userbooklist" class="controller.bookAction">
+        <result>/user_book_list.jsp</result>
+     </action>
+     <action name="userbookinfo" class="controller.bookAction">
+        <result>/book_detail_info.jsp</result>
+     </action>
+     <action name="bookaction" class="controller.bookAction" method="add">
+       <result name="success">/user.jsp</result>
+       <result name="ERROR">/book_add.jsp</result>
+       <result name="input">/login.jsp</result>
+     </action>
+     <action name="book_del" class="controller.bookAction" method="del">
+       <result name="success">/del_suc.jsp</result>
+       <result name="ERROR">/book_add.jsp</result>
+       <result name="input">/login.jsp</result>
+     </action>
+     <action name="book_update" class="controller.bookAction" method="to_update">
+       <result name="success">/update.jsp</result>
+     </action>
+     <action name="update" class="controller.bookAction" method="update">
+       <result name="success">/update_suc.jsp</result>
+       <result name="ERROR">/user.jsp</result>
+       <result name="input">/login.jsp</result>
+     </action>
+  </package>
+</struts>    
